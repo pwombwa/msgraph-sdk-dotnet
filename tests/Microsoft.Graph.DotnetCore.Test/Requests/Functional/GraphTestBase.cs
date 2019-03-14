@@ -88,8 +88,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 responseTask.Wait();
                 string responseContent = responseTask.Result;
                 jResult = JObject.Parse(responseContent);
+                accessToken = (string)jResult["access_token"];
             }
-            accessToken = (string)jResult["access_token"];
 
             if (!String.IsNullOrEmpty(accessToken))
             {
